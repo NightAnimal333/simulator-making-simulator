@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/megapixelmusic-happyaccident.wav-f2719327cdd586bbffc63c7f93725397.sample"
+
+[deps]
+
+source_file="res://assets/megapixelmusic-happyaccident.wav"
+dest_files=[ "res://.import/megapixelmusic-happyaccident.wav-f2719327cdd586bbffc63c7f93725397.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

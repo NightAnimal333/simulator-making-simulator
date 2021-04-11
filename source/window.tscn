@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/window_closed.png" type="Texture" id=1]
+[ext_resource path="res://assets/window_closed_aura.png" type="Texture" id=2]
+[ext_resource path="res://source/window.gd" type="Script" id=3]
+
+[node name="Window" type="TextureButton"]
+margin_left = 1439.93
+margin_top = 200.064
+margin_right = 1919.93
+margin_bottom = 531.064
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

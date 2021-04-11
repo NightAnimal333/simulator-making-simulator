@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/compter_screen.png" type="Texture" id=1]
+[ext_resource path="res://source/coffee_minigame.gd" type="Script" id=2]
+[ext_resource path="res://assets/press_progress.png" type="Texture" id=3]
+[ext_resource path="res://assets/cup_over.png" type="Texture" id=4]
+[ext_resource path="res://assets/press_over.png" type="Texture" id=5]
+[ext_resource path="res://assets/press_under.png" type="Texture" id=6]
+[ext_resource path="res://assets/cup_under.png" type="Texture" id=7]
+[ext_resource path="res://assets/cup_progress.png" type="Texture" id=8]
+[ext_resource path="res://assets/left.png" type="Texture" id=9]
+[ext_resource path="res://assets/spacebar.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), null ],
+"loop": true,
+"name": "left",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 10 ), null ],
+"loop": true,
+"name": "spacebar",
+"speed": 2.0
+} ]
+
+[node name="CoffeeMinigame" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tint" type="TextureRect" parent="."]
+modulate = Color( 0, 0, 0, 0.588235 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cup" type="TextureProgress" parent="."]
+margin_left = 434.509
+margin_top = 347.607
+margin_right = 690.509
+margin_bottom = 603.607
+rect_scale = Vector2( 1.2, 1.2 )
+step = 0.01
+value = 50.0
+texture_under = ExtResource( 7 )
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 8 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Press" type="TextureProgress" parent="."]
+margin_left = 970.903
+margin_top = 212.76
+margin_right = 1226.9
+margin_bottom = 468.76
+rect_scale = Vector2( 2, 2 )
+step = 0.01
+value = 50.0
+texture_under = ExtResource( 6 )
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 3 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="AnimatedSprite" parent="."]
+position = Vector2( 931.464, 928.95 )
+frames = SubResource( 1 )
+animation = "left"
+frame = 1
+playing = true

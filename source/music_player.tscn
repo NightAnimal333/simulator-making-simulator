@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/megapixelmusic-happyaccident.wav" type="AudioStream" id=1]
+[ext_resource path="res://source/music_player.gd" type="Script" id=2]
+[ext_resource path="res://assets/wasp.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/splat.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/water_sounds.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/drink.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/fanfare.wav" type="AudioStream" id=7]
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Music"
+
+[node name="Fanfare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.097
+bus = "Music"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
+[node name="Wasp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="Splat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="Drink" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 3.029
+bus = "SFX"
+
+[node name="WaterSounds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 12.116
+bus = "SFX"

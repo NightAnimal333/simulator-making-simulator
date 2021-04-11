@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/victory_screen.gd" type="Script" id=1]
+[ext_resource path="res://assets/compter_screen.png" type="Texture" id=2]
+
+[node name="VictoryScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BactToMainMenu" type="Button" parent="."]
+margin_left = 839.4
+margin_top = 414.099
+margin_right = 1120.4
+margin_bottom = 434.099
+text = "Back to main menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 760.365
+margin_top = 350.816
+margin_right = 1195.37
+margin_bottom = 364.816
+text = "Congratulations! You have finished your simulator! It's ready to ship!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BactToMainMenu" to="." method="_on_BactToMainMenu_pressed"]

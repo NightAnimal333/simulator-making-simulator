@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/compter_screen.png" type="Texture" id=1]
+[ext_resource path="res://source/chipher_minigame.gd" type="Script" id=2]
+
+[node name="CipherMinigame" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_top = 2.0
+margin_right = 1920.0
+margin_bottom = 1082.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 859.579
+margin_top = 217.063
+margin_right = 1021.58
+margin_bottom = 257.063
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cipher" type="Label" parent="VBoxContainer"]
+margin_right = 162.0
+margin_bottom = 14.0
+text = "Here goes encrypted text"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Label" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 162.0
+margin_bottom = 32.0
+text = "Here goes options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deciphered" type="TextEdit" parent="."]
+margin_left = 897.893
+margin_top = 290.582
+margin_right = 1035.89
+margin_bottom = 315.582
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="."]
+margin_left = 834.758
+margin_top = 424.105
+margin_right = 1097.76
+margin_bottom = 444.105
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
