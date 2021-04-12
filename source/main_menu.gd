@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	MusicPlayer.reset()
 	MusicPlayer.get_node("Music").play()
 
 func _on_StartGame_pressed():

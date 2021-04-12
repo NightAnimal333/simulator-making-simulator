@@ -1,6 +1,6 @@
 extends Node2D
 
-var words_list: Array = ["simulate", "recursion", "prototype", "coffee", "cipher", "wasp", "minigame", "game", "program", "while", "godot"]
+var words_list: Array = ["simulate", "recursion", "prototype", "coffee", "cipher", "wasp", "minigame", "game", "program", "while", "godot", "graphics", "sprite", "loop", "controls", "keyboard", "mouse", "monitor", "resolution", "madness", "work"]
 
 var text: String
 
@@ -39,21 +39,28 @@ func caesars_cypher(text: String, key: int) -> String:
 		
 	return result
 
-
-func _on_Submit_pressed():
-	if $Deciphered.text == text:
+func submit_deciphered(new_text: String):
+	if new_text == text:
 		get_parent().get_node("GameScreen").bug = false
 		get_parent().get_node("GameScreen").in_minigame = false
 		get_parent().get_node("GameScreen").Questionmark.hide()
 		get_parent().get_node("GameScreen").game_progress += 4
 		get_parent().get_node("GameScreen").madness_progress += 4
 		get_parent().get_node("GameScreen").show()
-		
-		queue_free()
 	
+		queue_free()
+
 	else:
 		$Deciphered.text = ""
+
+func _on_Deciphered_text_entered(new_text):
+	submit_deciphered($Deciphered.text)
+
+func _on_Submit_pressed():
+	submit_deciphered($Deciphered.text)
 		
 		
 func _on_game_over():
 	queue_free()
+
+

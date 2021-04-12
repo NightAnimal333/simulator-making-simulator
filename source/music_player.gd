@@ -6,3 +6,6 @@ func set_volume_percentage(percentage: float):
 	
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), volume_db)
 
+func reset():
+	for i in get_children():
+		i.stop()

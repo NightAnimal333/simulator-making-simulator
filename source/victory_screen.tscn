@@ -14,23 +14,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BactToMainMenu" type="Button" parent="."]
-margin_left = 839.4
-margin_top = 414.099
-margin_right = 1120.4
-margin_bottom = 434.099
-text = "Back to main menu"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 766.708
+margin_top = 212.712
+margin_right = 1201.71
+margin_bottom = 446.712
+custom_constants/separation = 200
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 760.365
-margin_top = 350.816
-margin_right = 1195.37
-margin_bottom = 364.816
-text = "Congratulations! You have finished your simulator! It's ready to ship!"
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 435.0
+margin_bottom = 14.0
+text = "Congratulations! You have finished the game jam!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="BactToMainMenu" to="." method="_on_BactToMainMenu_pressed"]
+
+[node name="BactToMainMenu" type="Button" parent="VBoxContainer"]
+margin_top = 214.0
+margin_right = 435.0
+margin_bottom = 234.0
+text = "Back to main menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/BactToMainMenu" to="." method="_on_BactToMainMenu_pressed"]

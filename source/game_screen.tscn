@@ -44,7 +44,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 20 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
@@ -52,7 +52,7 @@ animations = [ {
 "speed": 1.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 37.2673, 1305.74 )
 
 [node name="GameScreen" type="Node2D"]
@@ -143,8 +143,7 @@ __meta__ = {
 visible = false
 position = Vector2( 1504.43, 537.334 )
 scale = Vector2( 2.4864, 2.4864 )
-frames = SubResource( 5 )
-frame = 1
+frames = SubResource( 4 )
 playing = true
 
 [node name="GameProgress" type="ProgressBar" parent="."]
@@ -237,27 +236,27 @@ __meta__ = {
 position = Vector2( 0.547119, 537.916 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Top" type="KinematicBody2D" parent="."]
 position = Vector2( 982.866, -3.71817 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Bottom" type="KinematicBody2D" parent="."]
 position = Vector2( 921.1, 928.546 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Right" type="KinematicBody2D" parent="."]
 position = Vector2( 1917.72, 578.309 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="WaspGenerator" type="Position2D" parent="."]
 position = Vector2( 1681.48, 441.837 )

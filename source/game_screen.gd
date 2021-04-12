@@ -44,16 +44,29 @@ func _process(delta):
 		next_screen.ending = VictoryScreen.Endings.VICTORY
 		get_parent().add_child(next_screen)
 		queue_free()
-	elif temperature >= 31 or temperature <= 10:
+	elif temperature >= 31:
 		var next_screen = preload("res://source/victory_screen.tscn").instance() as VictoryScreen
-		next_screen.ending = VictoryScreen.Endings.DEFEAT
+		next_screen.ending = VictoryScreen.Endings.DEFEAT_TEMPERATURE_HIGH
+		get_parent().add_child(next_screen)
+		queue_free()
+	elif temperature <= 10:
+		var next_screen = preload("res://source/victory_screen.tscn").instance() as VictoryScreen
+		next_screen.ending = VictoryScreen.Endings.DEFEAT_TEMPERATURE_LOW
 		get_parent().add_child(next_screen)
 		queue_free()
 	elif coffee_progress <= 0:
 		var next_screen = preload("res://source/victory_screen.tscn").instance() as VictoryScreen
-		next_screen.ending = VictoryScreen.Endings.DEFEAT
+		next_screen.ending = VictoryScreen.Endings.DEFEAT_COFFEE
 		get_parent().add_child(next_screen)
 		queue_free()
+	elif madness_progress >= 100:
+		var next_screen = preload("res://source/victory_screen.tscn").instance() as VictoryScreen
+		next_screen.ending = VictoryScreen.Endings.DEFEAT_COFFEE
+		get_parent().add_child(next_screen)
+		queue_free()
+	
+	if coffee_progress >= 100:
+		coffee_progress = 100.0
 	
 	if not wasp and not game_frozen and not bug and not lying:
 		game_progress += GAME_COMPLETION_RATE * delta
